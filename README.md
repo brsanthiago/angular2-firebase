@@ -2,6 +2,30 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.1.
 
+## Install Dependencies
+Navigate project path and run`npm i`
+
+## Add Firebase Info
+Create/Open your account on [Firebase](https://firebase.google.com).
+
+Create new Project on firebase console.
+
+In Firebase Dashboard, click on `Firebase add to your Web application`
+
+
+Navigate project path and open `app.module.ts`
+
+Paste your informations on `firebaseConfig`
+
+`export const firebaseConfig = {
+  apiKey: '<YOUR-FIREBASE-API-KEY-HERE>',
+  authDomain: '<YOUR-APP-HERE>.firebaseapp.com',
+  databaseURL: 'https://<YOUR-APP-HERE>.firebaseio.com',
+  projectId: '<YOUR-APP-HERE>',
+  storageBucket: '<YOUR-APP-HERE>.appspot.com',
+  messagingSenderId: '<YOUR-APP-MESSAGE-SENDER-ID-HERE>'
+};`
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
