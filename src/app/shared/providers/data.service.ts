@@ -3,14 +3,15 @@ import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'a
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
-export class DataService {
-  constructor(private af: AngularFire) { }
+export class DataProvider {
+
+  constructor(private af: AngularFire) {}
 
   push(path: string, data: any): Observable<any> {
     return Observable.create(observer => {
-      this.af.database.list(path).push(data).then(firebaseData => {
-        const fData: any = firebaseData;
-        observer.next(fData.path.o[fData.path.o.length - 1]);
+      this.af.database.list(path).push(data).then(firebaseNewData => {
+        const newData: any = firebaseNewData;
+        observer.next(newData.path.o[newData.path.o.length - 1]);
       }, error => {
         observer.error(error);
       });
@@ -38,5 +39,4 @@ export class DataService {
       });
     });
   }
-
 }
