@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 
 import {ToastyService, ToastyConfig, ToastyComponent, ToastOptions, ToastData} from 'ng2-toasty';
 
-import { AuthProvider } from '../shared/providers/auth';
+import { AuthProvider } from '../../shared/providers/auth';
 
 @Component({
   selector: 'app-login',
@@ -19,13 +19,11 @@ export class LoginComponent implements OnInit {
     console.log('INICIOU');
    }
 
-  register(event, name, email, password) {
+  login(event, email, password) {
     event.preventDefault();
-    console.log('ENTROU');
     this.af.registerUser(email, password)
       .then((user) => {
         this.af.saveUser(user.uid, name, email).then(() => {
-          this.onSuccess();
           this.router.navigate(['/home']);
         })
       .catch((error) => {
@@ -33,18 +31,11 @@ export class LoginComponent implements OnInit {
       });
     })
     .catch((error) => {
-      this.onError(`Error on create your account  ${error}`);
+      this.onError(`Error on login  ${error}`);
     });
   }
 
   ngOnInit() {
-  }
-
-  onSuccess() {
-    const options: ToastOptions = {title: 'Success',
-            msg: 'Your Account created successfully',
-            showClose: true, timeout: this.timeout };
-    this.toastyService.success(options);
   }
 
   onError(error: any) {

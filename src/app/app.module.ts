@@ -13,7 +13,9 @@ import {ToastyModule} from 'ng2-toasty';
 //Application Components
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
+
 
 //Application Services & Models
 import { DataProvider } from './shared/providers/data.service';
@@ -34,6 +36,7 @@ export const firebaseConfig = {
   declarations: [
     AppComponent,
     LoginComponent,
+    RegisterComponent,
     DashboardComponent
   ],
   imports: [

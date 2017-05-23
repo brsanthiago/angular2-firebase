@@ -2,15 +2,9 @@
 <div class="container custom-container">
         <div class="panel panel-default">
             <div class="panel-body">
-                <h3 class="text-center">Create account!</h3>
+                <h3 class="text-center">Login</h3>
                 <br>
-                <form class="form" role="form" (ngSubmit)="register($event, name.value, email.value, password.value)">
-                     <div class="form-group custom-elem">
-                        <label  class="placeholder">Name</label>
-                        <input #name type="text" class="form-control material-input" autocomplete="on"  required>
-                            <span class="bottom-liner"></span>
-                            <span class="highlight"></span>
-                    </div>
+                <form class="form" role="form" (ngSubmit)="login($event, email.value, password.value)">
                     <div class="form-group custom-elem">
                         <label  class="placeholder">Email</label>
                         <input #email type="text" class="form-control material-input" autocomplete="on" required>
@@ -23,10 +17,11 @@
                             <span class="bottom-liner"></span>
                             <span class="highlight"></span>
                     </div><br>
-                    <button type="submit"  id="flow-button"  class="btn btn-custom btn-block">Register</button>
+                    <button type="submit"  id="flow-button"  class="btn btn-custom btn-block">Login</button>
     
                 </form>
-                
+                 <p class="text-center"><small><b> <a [routerLink]="['/register']">No have account?<span> Create here!</span></a></b></small></p>
+           
                 <!--p class="text-center"><small><b><a href="#">Forgot something?</a></b></small></p-->
             </div>
         </div>
