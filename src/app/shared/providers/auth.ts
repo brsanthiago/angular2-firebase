@@ -48,4 +48,7 @@ export class AuthProvider {
             email: email,
         });
     }
+    logout() {
+        this.af.auth.logout();
+    }
 }

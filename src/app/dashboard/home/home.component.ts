@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { AuthProvider } from '../../shared/providers/auth';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private af: AuthProvider) { }
 
   ngOnInit() {
   }
-
+  logout() {
+    this.af.logout();
+  }
 }
